@@ -12,7 +12,7 @@ library(RColorBrewer)
 library(car)
 
 #Set-up for Facebook Connection
-myaccess_token="###insert_your_access_token_here###"
+myaccess_token=###insert_your_access_token_here###
 mypage_id=###insert_your_page_id_here###
 options(RcurlOptions=list(verbose=FALSE,
                           capath=system.file("CurlSSL",
@@ -29,7 +29,6 @@ createdtime = strptime(page$created_time, f)
 createdtime = round(createdtime, units="hours")
 #Use only the hour of the date
 hourtable = createdtime$hour
-hourtable
 #Make tables using the like_count, share_count and comment_count
 likesbytime = table(page$likes_count,hourtable)
 sharesbytime = table(page$shares_count,hourtable)
